@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/returnBtn"
+            android:layout_width="65dp"
+            android:layout_height="36dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_action_return"/>
+
+        <TextView
+            android:id="@+id/cartHeader"
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:background="@color/main"
+            android:text="CART"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/lvCart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8" />
+
+    <LinearLayout
+        android:id="@+id/cart_btn_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:text="PURCHASE"
+            android:layout_marginRight="50dp"
+            android:textColor="@color/main"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/border"
+            android:clickable="true"/>
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:text="DELETE"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@color/main"/>
+    </LinearLayout>
+
+</LinearLayout>

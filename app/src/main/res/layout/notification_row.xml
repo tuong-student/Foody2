@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/imgNoti"
+        android:layout_width="67dp"
+        android:layout_height="52dp"
+        android:src="@drawable/speaker" />
+
+    <TextView
+        android:id="@+id/notiName"
+        android:layout_width="67dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="5dp"
+        android:text="NotiName"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/notiContent"
+        android:layout_width="156dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="5dp"
+        android:text="chúc mừng bạn đã được giảm giá ..." />
+
+    <TextView
+        android:id="@+id/notiDate"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="12/04/2022"
+        android:textStyle="bold" />
+
+</LinearLayout>

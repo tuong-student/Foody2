@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home.Home_fragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/parent_relative"
+        android:clipChildren="false">
+
+        <!--  Content  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--    Slider   -->
+            <FrameLayout
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="181dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="184dp"
+                    android:src="@drawable/bread_vn" />
+            </FrameLayout>
+            <!--    End Slider  -->
+            <!--    Main Content  -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gvPosts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FAF6F6"
+                android:clipToPadding="false"
+                android:scrollbars="vertical" />
+            <!--    End main content  -->
+        </LinearLayout>
+        <!--  End content  -->
+    </RelativeLayout>
+</FrameLayout>

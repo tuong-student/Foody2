@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:paddingHorizontal="8dp">
+
+    <ImageView
+        android:id="@+id/iv_store_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/bread_vn" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_store_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#F33737"/>
+
+        <TextView
+            android:id="@+id/tv_store_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store Address"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:textColor="@color/subColor"/>
+    </LinearLayout>
+</LinearLayout>
