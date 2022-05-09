@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart.CartView;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.R;
 
 public class User_fragment extends Fragment {
@@ -28,7 +29,7 @@ public class User_fragment extends Fragment {
         });
 
         view.findViewById(R.id.btn_cart).setOnClickListener(view ->{
-            Intent intent2 = new Intent(this.getContext(), UserCartView.class);
+            Intent intent2 = new Intent(this.getContext(), CartView.class);
             startActivity(intent2);
         });
         //endregion

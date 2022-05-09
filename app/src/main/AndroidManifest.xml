@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".User.UserCartView"
+            android:name=".Cart.CartView"
             android:exported="false" />
         <activity
             android:name=".User.UserAccountInfo"
