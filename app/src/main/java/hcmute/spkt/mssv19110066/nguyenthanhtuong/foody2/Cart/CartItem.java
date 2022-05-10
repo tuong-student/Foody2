@@ -7,8 +7,7 @@ public class CartItem {
     private float Price;
     private int quantity;
 
-    public CartItem(int id, String photoURL, String foodName, float price, int quantity) {
-        Id = id;
+    public CartItem(String photoURL, String foodName, float price, int quantity) {
         this.photoURL = photoURL;
         this.foodName = foodName;
         Price = price;

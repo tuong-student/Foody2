@@ -3,16 +3,26 @@ package hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Home;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Database;
 
 public class Store {
+    private int Id;
     String name;
     String url;
     String locationName;
     String photoUrl;
 
-    public Store(String title, String url, String photoUrl, String locationName) {
+    public Store(int Id, String title, String url, String photoUrl, String locationName) {
+        this.Id = Id;
         this.locationName = locationName;
         this.name = title;
         this.photoUrl = photoUrl;
         this.url = url;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getName() {

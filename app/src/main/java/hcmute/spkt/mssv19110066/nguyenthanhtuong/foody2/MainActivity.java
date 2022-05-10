@@ -7,11 +7,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart.CartView;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Home.Home_fragment;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Notification.Notification_fragment;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.User.User_fragment;
@@ -20,18 +22,26 @@ import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.User.User_fragment;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView navigationView;
+    public static MainActivity Ins;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if(Ins == null){
+            Ins = this;
+        }
+
         navigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_container);
 
         //region Set navigation click even
         navigationView.setOnNavigationItemSelectedListener(mOnClickListener);
 
-
+        findViewById(R.id.shopping_cart).setOnClickListener(view -> {
+            Intent intent2 = new Intent(this, CartView.class);
+            startActivity(intent2);
+        });
         //endregion
 
         //Default fragment

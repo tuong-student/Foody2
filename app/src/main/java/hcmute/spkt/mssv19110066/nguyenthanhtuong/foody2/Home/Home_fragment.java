@@ -3,10 +3,12 @@ package hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Home;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,11 +23,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.MainActivity;
+import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Menu.Menu_fragment;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.R;
 
 public class Home_fragment extends Fragment {
     private static final String TAG = Home_fragment.class.getSimpleName();
-    private static final String URL = "https://www.foody.vn/__get/Place/HomeListPlace?t=1651667845044&page=1&lat=10.823099&lon=106.629664&count=12&districtId=693&cateId=&cuisineId=&isReputation=&type=1";
+    private static final String URL = "https://www.foody.vn/__get/Place/HomeListPlace?t=1652116366421&page=1&lat=10.823099&lon=106.629664&count=12&districtId=11&cateId=&cuisineId=&isReputation=&type=1";
 
     RecyclerView Posts;
     StoreAdapter adapter;
@@ -39,7 +43,7 @@ public class Home_fragment extends Fragment {
 
         Posts = view.findViewById(R.id.gvPosts);
         storeArrayList = new ArrayList<>();
-        adapter = new StoreAdapter(this.getContext(), storeArrayList);
+        adapter = new StoreAdapter(this, storeArrayList);
 
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
@@ -47,12 +51,24 @@ public class Home_fragment extends Fragment {
         Posts.setAdapter(adapter);
         Posts.setNestedScrollingEnabled(false);
 
-
         FetchStoreItem();
+        //region Click event
 
+        //endregion
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    public void SendData(Integer Id, String StoreName){
+        Bundle bundle = new Bundle();
+        bundle.putInt("Id", Id);
+        bundle.putString("storeName", StoreName);
+
+        Menu_fragment menu_fragment = new Menu_fragment();
+        menu_fragment.setArguments(bundle);
+
+        MainActivity.Ins.replaceFragment(menu_fragment);
     }
 
     public void FetchStoreItem() {
@@ -71,11 +87,12 @@ public class Home_fragment extends Fragment {
 
                         for (int i = 0; i < jSONArray.length(); i++) {
                             JSONObject store = jSONArray.getJSONObject(i);
+                            int id = store.getInt("Id");
                             String name = store.getString("Name");
                             String photoUrl = store.getString("PhotoUrl");
                             String url = store.getString("Url");
 
-                            storeArrayList.add(new Store(name, url, photoUrl, "Thu Duc"));
+                            storeArrayList.add(new Store(id, name, url, photoUrl, "Thu Duc"));
                         }
 
                         adapter.notifyDataSetChanged();

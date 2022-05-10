@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:id="@+id/store_block_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="250dp"
     android:orientation="vertical"
@@ -24,7 +26,8 @@
             android:text="Store Name"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#F33737"/>
+            android:textColor="#F33737"
+            android:clickable="true"/>
 
         <TextView
             android:id="@+id/tv_store_address"

@@ -3,14 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/activity_main.xml" value="0.2604166666666667" />
+        <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/drawable-anydpi/ic_action_store.xml" value="0.137" />
+        <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/activity_main.xml" value="0.22010869565217392" />
         <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/cart_row.xml" value="0.27447916666666666" />
         <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/cart_view.xml" value="0.27447916666666666" />
         <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/food_row.xml" value="0.27447916666666666" />
         <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/fragment_home_fragment.xml" value="0.27447916666666666" />
+        <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/fragment_menu_fragment.xml" value="0.27447916666666666" />
         <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/fragment_notification_fragment.xml" value="0.27447916666666666" />
         <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/fragment_store_fragment.xml" value="0.27447916666666666" />
         <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/fragment_user_fragment.xml" value="0.27447916666666666" />
+        <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/menu_row.xml" value="0.27447916666666666" />
         <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/notification_row.xml" value="0.27447916666666666" />
         <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/notification_view.xml" value="0.27447916666666666" />
         <entry key="..\:/PROJECT/Mobile_project/Foody2/app/src/main/res/layout/store_block.xml" value="0.27447916666666666" />
