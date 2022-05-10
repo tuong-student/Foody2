@@ -1,13 +1,15 @@
 package hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart;
 
-public class CartItem {
+import java.io.Serializable;
+
+public class CartItem implements Serializable {
     private int Id;
     private String photoURL;
     private String foodName;
-    private float Price;
+    private int Price;
     private int quantity;
 
-    public CartItem(String photoURL, String foodName, float price, int quantity) {
+    public CartItem(String photoURL, String foodName, int price, int quantity) {
         this.photoURL = photoURL;
         this.foodName = foodName;
         Price = price;
@@ -38,11 +40,11 @@ public class CartItem {
         this.foodName = foodName;
     }
 
-    public float getPrice() {
+    public int getPrice() {
         return Price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(int price) {
         Price = price;
     }
 

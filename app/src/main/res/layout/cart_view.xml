@@ -30,7 +30,7 @@
 
 
     <ListView
-        android:id="@+id/lvCart"
+        android:id="@+id/cart_lvCart"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="8" />
@@ -43,6 +43,7 @@
         android:layout_marginBottom="4dp">
 
         <TextView
+            android:id="@+id/cart_btn_purchase"
             android:layout_width="130dp"
             android:layout_height="40dp"
             android:layout_marginRight="50dp"
@@ -54,6 +55,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/cart_btn_delete"
             android:layout_width="130dp"
             android:layout_height="40dp"
             android:background="@color/main"
