@@ -68,4 +68,11 @@ public class CartView extends AppCompatActivity {
         //TODO: Viết hàm xóa item khỏi DB
 
     }
+
+    public CartItem GetItem(int Id){
+        //TODO: Lấy dữ liệu trong sql dựa vào Id sau đó gán dữ liệu vào item
+        CartItem item = null;
+
+        return item;
+    }
 }
