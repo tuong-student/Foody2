@@ -23,6 +23,17 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase database = getReadableDatabase();
         return database.rawQuery(sql, null);
     }
+    public void QueryData(String sql,Object []bundle){
+        SQLiteDatabase database = getWritableDatabase();
+        database.execSQL(sql, bundle);
+    }
+
+    //truy van co tra ket qua: SELECT
+    public Cursor GetData(String sql, String []bundle){
+        SQLiteDatabase database = getReadableDatabase();
+        return database.rawQuery(sql, bundle);
+    }
+
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
