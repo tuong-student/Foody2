@@ -1,13 +1,16 @@
 package hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
+import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.MainActivity;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.R;
 
 public class CartView extends AppCompatActivity {
@@ -26,7 +29,7 @@ public class CartView extends AppCompatActivity {
 
         cartItemArrayList = new ArrayList<>();
         adapter = new CartAdapter(getApplicationContext(), R.layout.cart_row, cartItemArrayList);
-        lvCart = findViewById(R.id.lvCart);
+        lvCart = findViewById(R.id.cart_lvCart);
 
         //Set data
         //TODO: Mày dựa vào cái này mà thêm dữ liệu vào cartItemArrayList từ DB
@@ -40,6 +43,13 @@ public class CartView extends AppCompatActivity {
 
         findViewById(R.id.returnBtn).setOnClickListener(view -> {
             finish();
+        });
+
+        findViewById(R.id.cart_btn_purchase).setOnClickListener(view -> {
+            Intent intent = new Intent(this, CartBill.class);
+            intent.putExtra("CartList", (Serializable) cartItemArrayList);
+
+            startActivity(intent);
         });
     }
 
@@ -57,5 +67,12 @@ public class CartView extends AppCompatActivity {
     public void DeleteToCart(String Id){
         //TODO: Viết hàm xóa item khỏi DB
 
+    }
+
+    public CartItem GetItem(int Id){
+        //TODO: Lấy dữ liệu trong sql dựa vào Id sau đó gán dữ liệu vào item
+        CartItem item = null;
+
+        return item;
     }
 }

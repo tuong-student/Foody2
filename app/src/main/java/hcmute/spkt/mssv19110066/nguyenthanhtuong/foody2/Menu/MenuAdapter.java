@@ -22,6 +22,7 @@ import java.util.Locale;
 
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart.CartItem;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.R;
+import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Support;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder>{
 
@@ -42,18 +43,11 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder>{
         return new MenuAdapter.MyViewHolder( itemView );
     }
 
-    private String currencyFormat(int price) {
-        Locale locale = new Locale( "vi", "VN" );
-        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance( locale );
-
-        return currencyFormatter.format( price );
-    }
-
     @Override
     public void onBindViewHolder(MenuAdapter.MyViewHolder holder, final int position) {
         final MenuItem menuItem = menuItemList.get( position );
         holder.name.setText( menuItem.getName() );
-        holder.price.setText(currencyFormat(menuItem.getPrice()));
+        holder.price.setText(Support.CurrencyFormat(menuItem.getPrice()));
 
         Glide.with( context ).load( menuItem.getPhotoURL() ).into( holder.image );
 
