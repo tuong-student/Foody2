@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart.CartDB;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart.CartView;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Home.Home_fragment;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Notification.Notification_fragment;
@@ -42,8 +43,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent2 = new Intent(this, CartView.class);
             startActivity(intent2);
         });
+        findViewById(R.id.btn_login).setOnClickListener(view -> {
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+        });
         //endregion
 
+        Support.cartDB = new CartDB();
         //Default fragment
         replaceFragment(new Home_fragment());
     }

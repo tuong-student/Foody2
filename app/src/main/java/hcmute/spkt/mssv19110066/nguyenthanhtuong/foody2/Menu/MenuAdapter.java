@@ -1,9 +1,6 @@
 package hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Menu;
 
-import android.content.Context;
-import android.icu.util.CurrencyAmount;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -16,12 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.text.NumberFormat;
-import java.util.Currency;
 import java.util.List;
-import java.util.Locale;
 
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart.CartItem;
+import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart.CartView;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.R;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Support;
 
@@ -53,8 +48,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder>{
         Glide.with( context ).load( menuItem.getPhotoURL() ).into( holder.image );
 
         holder.btn_addToCart.setOnClickListener(view -> {
-            context.AddToCart(new CartItem(menuItem.getId(), menuItem.getPhotoURL(), menuItem.getName(), menuItem.getPrice(), 1));
-            Toast.makeText(context.getActivity(), String.valueOf(menuItem.getId()), Toast.LENGTH_LONG).show();
+            CartItem item = new CartItem(menuItem.getId(), menuItem.getPhotoURL(), menuItem.getName(), menuItem.getPrice(), 1);
+            Support.cartDB.AddToCart(item);
+            Toast.makeText(context.getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
         });
     }
 

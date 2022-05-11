@@ -8,9 +8,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart.CartView;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.R;
+import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Support;
 
 public class User_fragment extends Fragment {
 
@@ -21,6 +25,9 @@ public class User_fragment extends Fragment {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_user_fragment, container,false);
+
+        TextView userName = view.findViewById(R.id.txt_user_name);
+        userName.setText(Support.user.getName());
 
         //region Set click even
         view.findViewById(R.id.btn_account_info).setOnClickListener(view -> {

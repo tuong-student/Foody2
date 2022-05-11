@@ -1,5 +1,7 @@
 package hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Menu;
 
+import android.app.admin.SystemUpdatePolicy;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,13 +32,13 @@ import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Home.MyApplication;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Home.Store;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.MainActivity;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.R;
+import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Support;
 
 public class Menu_fragment extends Fragment {
     private static final String TAG = Menu_fragment.class.getSimpleName();
     private static final String URL = "https://gappapi.deliverynow.vn/api/dish/get_delivery_dishes?id_type=1&request_id=";
 
     View view;
-    CartView cartView;
     MenuAdapter adapter;
     ArrayList<MenuItem> menuItemArrayList;
     String storeId;
@@ -51,9 +53,6 @@ public class Menu_fragment extends Fragment {
         menuItemArrayList = new ArrayList<>();
         adapter = new MenuAdapter(this, menuItemArrayList);
         recyclerView = view.findViewById(R.id.menu_fragment_recyclerView);
-        if (cartView == null) {
-            cartView = new CartView();
-        }
 
 
         RecyclerView.LayoutManager mLayoutManagement = new GridLayoutManager(getActivity(), 1);
@@ -69,9 +68,7 @@ public class Menu_fragment extends Fragment {
         return view;
     }
 
-    public void AddToCart(CartItem item){
-        cartView.AddToCart(item);
-    }
+
 
     private void fetchStoreItems() {
         JsonObjectRequest request = new JsonObjectRequest( URL + storeId,
