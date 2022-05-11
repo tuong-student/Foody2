@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity {
         LoginDatabase.QueryData("CREATE TABLE IF NOT EXISTS Login(Id INTEGER PRIMARY KEY AUTOINCREMENT,Username VARCHAR(50),Password VARCHAR(50))");
 
         // insert data
-        //LoginDatabase.QueryData("INSERT INTO Login VALUES(null,'thanhtuong157','thanhtuong157')");
+        //LoginDatabase.QueryData("INSERT INTO Login VALUES(null,'tinhau1204','tinhau12042001')");
 
 
 
