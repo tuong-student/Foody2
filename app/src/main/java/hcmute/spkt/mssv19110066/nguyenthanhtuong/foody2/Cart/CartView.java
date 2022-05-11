@@ -89,18 +89,27 @@ public class CartView extends AppCompatActivity {
     public void AddToCart(CartItem item){
         //TODO: Viết hàm add item vào DB
         //Item add vào DB không được trùng nhau
+        boolean hasItem = CartDatabase.GetData("SELECT foodName FROM Cart WHERE foodName = ?", new String[] {item.getFoodName()}).moveToNext();
+        if(hasItem) {
+            return;
+        }
+        CartDatabase.QueryData("INSERT INTO Cart VALUES(null,?,?,?,?)",new Object[] {item.getPhotoURL(),item.getFoodName(),item.getPrice(),item.getQuantity()});
+        }
 
-    }
-
-    public void DeleteToCart(String Id){
+    public void DeleteToCart(String name){
         //TODO: Viết hàm xóa item khỏi DB
-
+        CartDatabase.QueryData("DELETE FROM Cart WHERE foodName = ?",new String[] {name});
     }
 
     public CartItem GetItem(int Id){
         //TODO: Lấy dữ liệu trong sql dựa vào Id sau đó gán dữ liệu vào item
-        CartItem item = null;
 
-        return item;
+        Cursor cursor = CartDatabase.GetData("SELECT * FROM Cart WHERE Id = ?", new String[] {String.valueOf(Id)});
+        cursor.moveToNext();
+        String photoURL = cursor.getString(1);
+        String foodName = cursor.getString(2);
+        int price = cursor.getInt(3);
+        int Quantity = cursor.getInt(4);
+        return new CartItem(photoURL,foodName,price,Quantity);
     }
 }
