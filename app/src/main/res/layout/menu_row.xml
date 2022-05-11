@@ -43,7 +43,8 @@
             android:layout_height="50dp"
             android:src="@drawable/ic_action_add"
             android:background="#0000"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:clickable="true"/>
 
     </LinearLayout>
 </LinearLayout>

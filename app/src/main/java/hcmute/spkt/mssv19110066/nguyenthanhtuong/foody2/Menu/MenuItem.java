@@ -1,18 +1,28 @@
 package hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Menu;
 
 public class MenuItem {
+    int Id;
     private String storeName;
     private String name;
     private int price;
     private String description;
     private String photoURL;
 
-    public MenuItem(String storeName, String name, int price, String description, String photoURL) {
+    public MenuItem(int id, String storeName, String name, int price, String description, String photoURL) {
+        Id = id;
         this.storeName = storeName;
         this.name = name;
         this.price = price;
         this.description = description;
         this.photoURL = photoURL;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getStoreName() {

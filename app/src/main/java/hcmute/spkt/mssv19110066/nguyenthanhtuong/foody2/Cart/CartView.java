@@ -35,9 +35,9 @@ public class CartView extends AppCompatActivity {
         //TODO: Mày dựa vào cái này mà thêm dữ liệu vào cartItemArrayList từ DB
         //TODO: ảnh thì tạm thời m lấy link trên mạng rồi thêm vào DB để test, về sau t lấy api để thêm ảnh vào DB
         String photoURL = "https://food.fnr.sndimg.com/content/dam/images/food/products/2022/3/11/rx_goldbelly-clinton-street-diner-zeus-burger.jpg.rend.hgtvcom.406.305.suffix/1647019464547.jpeg";
-        cartItemArrayList.add(new CartItem(photoURL ,"Fast food", 2, 2));
+        cartItemArrayList.add(new CartItem(1, photoURL ,"Fast food", 2, 2));
         photoURL = "https://cdn.tgdd.vn/2021/05/CookRecipe/Avatar/banh-mi-thit-bo-nuong-thumbnail-1.jpg";
-        cartItemArrayList.add(new CartItem(photoURL ,"Banh Mi", 2, 2));
+        cartItemArrayList.add(new CartItem(2, photoURL ,"Banh Mi", 2, 2));
 
         lvCart.setAdapter(adapter);
 

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -52,7 +53,8 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder>{
         Glide.with( context ).load( menuItem.getPhotoURL() ).into( holder.image );
 
         holder.btn_addToCart.setOnClickListener(view -> {
-            context.AddToCart(new CartItem(menuItem.getPhotoURL(), menuItem.getName(), menuItem.getPrice(), 1));
+            context.AddToCart(new CartItem(menuItem.getId(), menuItem.getPhotoURL(), menuItem.getName(), menuItem.getPrice(), 1));
+            Toast.makeText(context.getActivity(), String.valueOf(menuItem.getId()), Toast.LENGTH_LONG).show();
         });
     }
 

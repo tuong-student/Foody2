@@ -1,8 +1,9 @@
 package hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Home;
 
-import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Database;
+import java.io.Serializable;
 
-public class Store {
+
+public class Store implements Serializable {
     private int Id;
     String name;
     String url;

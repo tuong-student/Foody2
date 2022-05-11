@@ -3,12 +3,10 @@ package hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Home;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,7 +27,7 @@ import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.R;
 
 public class Home_fragment extends Fragment {
     private static final String TAG = Home_fragment.class.getSimpleName();
-    private static final String URL = "https://www.foody.vn/__get/Place/HomeListPlace?t=1652116366421&page=1&lat=10.823099&lon=106.629664&count=12&districtId=11&cateId=&cuisineId=&isReputation=&type=1";
+    private static final String URL = "https://www.foody.vn/__get/Place/HomeListPlace?t=1652241974748&page=1&lat=10.823099&lon=106.629664&count=12&districtId=693&cateId=&cuisineId=&isReputation=&type=1";
 
     RecyclerView Posts;
     StoreAdapter adapter;
@@ -60,10 +58,9 @@ public class Home_fragment extends Fragment {
         return view;
     }
 
-    public void SendData(Integer Id, String StoreName){
+    public void SendData(Store store){
         Bundle bundle = new Bundle();
-        bundle.putInt("Id", Id);
-        bundle.putString("storeName", StoreName);
+        bundle.putSerializable("store", store);
 
         Menu_fragment menu_fragment = new Menu_fragment();
         menu_fragment.setArguments(bundle);

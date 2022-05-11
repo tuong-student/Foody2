@@ -49,7 +49,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.MyViewHolder
 
         //Set Click even
         holder.store_block_layout.setOnClickListener(view -> {
-            context.SendData(store.getId(), store.getName());
+            context.SendData(store);
         });
     }
 

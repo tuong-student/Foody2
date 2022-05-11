@@ -9,7 +9,8 @@ public class CartItem implements Serializable {
     private int Price;
     private int quantity;
 
-    public CartItem(String photoURL, String foodName, int price, int quantity) {
+    public CartItem(int id, String photoURL, String foodName, int price, int quantity) {
+        Id = id;
         this.photoURL = photoURL;
         this.foodName = foodName;
         Price = price;

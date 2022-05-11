@@ -27,6 +27,7 @@ import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart.CartItem;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Cart.CartView;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Home.Home_fragment;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Home.MyApplication;
+import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Home.Store;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.MainActivity;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.R;
 
@@ -60,8 +61,9 @@ public class Menu_fragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setNestedScrollingEnabled(false);
 
-        storeId = String.valueOf(getArguments().getInt("Id"));
-        storeName = getArguments().getString("storeName");
+        Store store = (Store) getArguments().getSerializable("store");
+        storeId = String.valueOf(store.getId());
+        storeName = store.getName();
 
         fetchStoreItems();
         return view;
@@ -96,6 +98,7 @@ public class Menu_fragment extends Fragment {
 
                             for (int j = 0; j < dishes.length(); j++) {
                                 JSONObject dish = dishes.getJSONObject( j );
+                                int id = dish.getInt("id");
                                 String name = dish.getString( "name" );
                                 String description = dish
                                         .getString(
@@ -107,7 +110,7 @@ public class Menu_fragment extends Fragment {
                                 int price = dish.getJSONObject( "price" )
                                         .getInt( "value" );
 
-                                menuItemArrayList.add( new MenuItem(storeName, name, price,
+                                menuItemArrayList.add( new MenuItem(id, storeName, name, price,
                                         description, photoUrl ) );
                             }
                         }
