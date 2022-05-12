@@ -29,7 +29,7 @@ public class CartBill extends AppCompatActivity {
         ArrayList<CartItem> cartItemArrayList = (ArrayList<CartItem>) getIntent().getSerializableExtra("CartList");
 
         for (CartItem cartItem: cartItemArrayList) {
-            total += cartItem.getPrice();
+            total += cartItem.getPrice() * cartItem.getQuantity();
         }
 
         adapter = new CartBillAdapter(this.getApplicationContext(), cartItemArrayList, R.layout.cart_bill_row);
@@ -43,6 +43,10 @@ public class CartBill extends AppCompatActivity {
         findViewById(R.id.cart_btn_return_home).setOnClickListener(view -> {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+        });
+
+        findViewById(R.id.returnBtn).setOnClickListener(view -> {
+            finish();
         });
     }
 }

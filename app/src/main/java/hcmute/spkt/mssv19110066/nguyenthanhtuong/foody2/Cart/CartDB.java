@@ -13,7 +13,7 @@ public class CartDB {
         CartDatabase = new Database(MainActivity.Ins.getApplicationContext(), "Cart.sqlite", null, 1);
 
         //tạo bảng cho noti
-        CartDatabase.QueryData("CREATE TABLE IF NOT EXISTS Cart(Id INTEGER PRIMARY KEY AUTOINCREMENT, imgUrl VARCHAR(400), foodName VARCHAR(200), foodPrice INTEGER, foodQuantity INTEGER)");
+        CartDatabase.QueryData("CREATE TABLE IF NOT EXISTS Cart(Id INTEGER PRIMARY KEY, imgUrl VARCHAR(400), foodName VARCHAR(200), foodPrice INTEGER, foodQuantity INTEGER)");
 
     }
 
@@ -30,6 +30,10 @@ public class CartDB {
     public void DeleteToCart(String id){
         //TODO: Viết hàm xóa item khỏi DB
         CartDatabase.QueryData("DELETE FROM Cart WHERE Id = ?",new String[] {id});
+    }
+
+    public void UpdateToCart(CartItem item){
+        CartDatabase.QueryData("UPDATE Cart SET foodQuantity = " + item.getQuantity() + " WHERE Id = " + item.getId());
     }
 
     public void DeleteAll(){

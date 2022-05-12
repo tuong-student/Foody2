@@ -18,11 +18,11 @@ import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.R;
 import hcmute.spkt.mssv19110066.nguyenthanhtuong.foody2.Support;
 
 public class CartAdapter extends BaseAdapter {
-    private Context context;
+    private CartView context;
     private int layout;
     private List<CartItem> cartItemList;
 
-    public CartAdapter(Context context, int layout, List<CartItem> cartItemList) {
+    public CartAdapter(CartView context, int layout, List<CartItem> cartItemList) {
         this.context = context;
         this.layout = layout;
         this.cartItemList = cartItemList;
@@ -43,7 +43,7 @@ public class CartAdapter extends BaseAdapter {
         return 0;
     }
 
-    private static class ViewHolder{
+    private static class ViewHolder {
         ImageView image;
         TextView foodName, price, quantity;
         ImageButton btn_up, btn_down;
@@ -52,7 +52,7 @@ public class CartAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder;
-        if(view == null){
+        if (view == null) {
             holder = new ViewHolder();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(layout, null);
@@ -60,8 +60,10 @@ public class CartAdapter extends BaseAdapter {
             holder.foodName = view.findViewById(R.id.cart_row_foodName);
             holder.price = view.findViewById(R.id.cart_row_price);
             holder.quantity = view.findViewById(R.id.cart_row_numQuantity);
+            holder.btn_up = view.findViewById(R.id.cart_row_btn_arrow_up);
+            holder.btn_down = view.findViewById(R.id.cart_row_btn_arrow_down);
             view.setTag(holder);
-        }else {
+        } else {
             holder = (ViewHolder) view.getTag();
         }
 
@@ -73,7 +75,22 @@ public class CartAdapter extends BaseAdapter {
         holder.price.setText(price);
         holder.quantity.setText(String.valueOf(item.getQuantity()));
 
+        holder.btn_up.setOnClickListener(view1 -> {
+            CartItem chooseItem = Support.cartDB.GetItem(item.getId());
+            chooseItem.setQuantity(chooseItem.getQuantity() + 1);
+            Support.cartDB.UpdateToCart(chooseItem);
+            context.LoadData();
 
+        });
+
+        holder.btn_down.setOnClickListener(view1 -> {
+            CartItem chooseItem = Support.cartDB.GetItem(item.getId());
+            if (chooseItem.getQuantity() > 1) {
+                chooseItem.setQuantity(chooseItem.getQuantity() - 1);
+                Support.cartDB.UpdateToCart(chooseItem);
+                context.LoadData();
+            }
+        });
         return view;
     }
 }
