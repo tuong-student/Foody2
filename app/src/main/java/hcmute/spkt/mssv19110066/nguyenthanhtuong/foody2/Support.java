@@ -18,11 +18,8 @@ public class Support {
         return currencyFormatter.format( price );
     }
 
-    public static User CreateUser(String name, String email, String password){
-        user.setName(name);
-        user.setEmail(email);
-        user.setPassword(password);
-
-        return user;
+    public static void CreateUser(String name, String email, String password){
+        User newUser = new User(name, email, password);
+        Support.user = newUser;
     }
 }

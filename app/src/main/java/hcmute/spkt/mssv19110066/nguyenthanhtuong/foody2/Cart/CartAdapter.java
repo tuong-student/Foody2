@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -45,6 +46,7 @@ public class CartAdapter extends BaseAdapter {
     private static class ViewHolder{
         ImageView image;
         TextView foodName, price, quantity;
+        ImageButton btn_up, btn_down;
     }
 
     @Override
@@ -70,6 +72,7 @@ public class CartAdapter extends BaseAdapter {
         String price = Support.CurrencyFormat(item.getPrice());
         holder.price.setText(price);
         holder.quantity.setText(String.valueOf(item.getQuantity()));
+
 
         return view;
     }

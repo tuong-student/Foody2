@@ -26,7 +26,7 @@ public class User_fragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_user_fragment, container,false);
 
-        TextView userName = view.findViewById(R.id.txt_user_name);
+        TextView userName = view.findViewById(R.id.user_name_text);
         userName.setText(Support.user.getName());
 
         //region Set click even

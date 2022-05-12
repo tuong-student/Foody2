@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(Ins == null){
+        if (Ins == null) {
             Ins = this;
         }
 
@@ -49,8 +49,10 @@ public class MainActivity extends AppCompatActivity {
         });
         //endregion
 
-        Support.cartDB = new CartDB();
-        Support.cartDB.DeleteAll();
+        if (Support.cartDB == null) {
+            Support.cartDB = new CartDB();
+            Support.cartDB.DeleteAll();
+        }
         //Default fragment
         replaceFragment(new Home_fragment());
     }
@@ -59,14 +61,15 @@ public class MainActivity extends AppCompatActivity {
         @SuppressLint("NonConstantResourceId")
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.navi_notify:
                     replaceFragment(new Notification_fragment());
                     break;
                 case R.id.navi_user:
-                    if(Support.user == null){
+                    if (Support.user == null) {
                         Intent intent = new Intent(getApplicationContext(), Login.class);
                         startActivity(intent);
+                        break;
                     }
                     replaceFragment(new User_fragment());
                     break;
@@ -78,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public void replaceFragment(Fragment fragment){
+    public void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.main_frame_layout, fragment);
