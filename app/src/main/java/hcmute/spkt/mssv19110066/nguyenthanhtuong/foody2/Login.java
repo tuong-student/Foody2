@@ -49,6 +49,8 @@ public class Login extends AppCompatActivity {
 
             }
             else {
+                double rand = Math.random();
+                Support.CreateUser("User " + rand, inputEmail.getText().toString(), inputPassword.getText().toString());
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }

@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         //endregion
 
         Support.cartDB = new CartDB();
+        Support.cartDB.DeleteAll();
         //Default fragment
         replaceFragment(new Home_fragment());
     }
@@ -63,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new Notification_fragment());
                     break;
                 case R.id.navi_user:
+                    if(Support.user == null){
+                        Intent intent = new Intent(getApplicationContext(), Login.class);
+                        startActivity(intent);
+                    }
                     replaceFragment(new User_fragment());
                     break;
                 default:

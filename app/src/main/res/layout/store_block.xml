@@ -1,41 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/store_block_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="250dp"
-    android:orientation="vertical"
-    android:weightSum="10"
-    android:paddingHorizontal="8dp">
-
-    <ImageView
-        android:id="@+id/iv_store_image"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/bread_vn" />
+    android:layout_margin="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="250dp"
+        android:background="@drawable/rounded_border"
+        android:orientation="vertical"
+        android:paddingHorizontal="8dp"
+        android:weightSum="10">
 
-        <TextView
-            android:id="@+id/tv_store_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Store Name"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#F33737"
-            android:clickable="true"/>
+        <ImageView
+            android:id="@+id/iv_store_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/bread_vn" />
 
-        <TextView
-            android:id="@+id/tv_store_address"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Store Address"
-            android:textSize="15sp"
-            android:textStyle="italic"
-            android:textColor="@color/subColor"/>
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Store Name"
+                android:textColor="#F33737"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_store_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Store Address"
+                android:textColor="@color/subColor"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

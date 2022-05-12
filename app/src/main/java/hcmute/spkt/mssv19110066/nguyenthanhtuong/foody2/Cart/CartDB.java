@@ -32,6 +32,11 @@ public class CartDB {
         CartDatabase.QueryData("DELETE FROM Cart WHERE Id = ?",new String[] {id});
     }
 
+    public void DeleteAll(){
+        //TODO: Viết hàm xóa item khỏi DB
+        CartDatabase.QueryData("DELETE FROM Cart");
+    }
+
     public CartItem GetItem(int Id){
         //TODO: Lấy dữ liệu trong sql dựa vào Id sau đó gán dữ liệu vào item
 

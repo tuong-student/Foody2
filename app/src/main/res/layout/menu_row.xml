@@ -2,12 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp"
     android:gravity="center_vertical"
-    android:layout_marginVertical="4dp">
+    android:paddingHorizontal="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_border"
+        android:padding="3dp">
 
         <ImageView
             android:id="@+id/menu_row_image"
@@ -19,32 +22,42 @@
             android:id="@+id/menu_row_foodName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Banh Mi"
-            android:textSize="20dp"
             android:layout_gravity="center_vertical"
-            android:textStyle="bold"
             android:layout_weight="6"
             android:paddingLeft="8dp"
-            android:textColor="@color/title_color"/>
+            android:text="Banh Mi"
+            android:textColor="@color/title_color"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/menu_row_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:text="12.000đ"
+            android:textColor="@color/title_color"
             android:textSize="15dp"
-            android:layout_gravity="center_vertical"
             android:textStyle="italic"
-            android:textColor="@color/title_color"/>
+            android:layout_margin="4dp"/>
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/menu_row_btn_addToCart"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_action_add"
-            android:background="#0000"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:clickable="true"/>
+            android:background="@drawable/rounded_border"
+            android:padding="-5dp"
+            android:layout_margin="2dp">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/menu_row_btn_addToCart"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:background="#0000"
+                android:clickable="true"
+                android:src="@drawable/ic_action_add" />
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>
